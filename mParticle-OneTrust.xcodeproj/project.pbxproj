@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DBB01A601DC1478A00A7B188 /* mParticle_Example.h in Headers */ = {isa = PBXBuildFile; fileRef = DBB01A5E1DC1478A00A7B188 /* mParticle_Example.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DBB01A601DC1478A00A7B188 /* mParticle_OneTrust.h in Headers */ = {isa = PBXBuildFile; fileRef = DBB01A5E1DC1478A00A7B188 /* mParticle_OneTrust.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DBB01A681DC1480700A7B188 /* MPKitOneTrust.h in Headers */ = {isa = PBXBuildFile; fileRef = DBB01A661DC1480700A7B188 /* MPKitOneTrust.h */; };
 		DBB01A691DC1480700A7B188 /* MPKitOneTrust.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB01A671DC1480700A7B188 /* MPKitOneTrust.m */; };
 		DBB01A6B1DC1491D00A7B188 /* mParticle_Apple_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBB01A6A1DC1491D00A7B188 /* mParticle_Apple_SDK.framework */; };
-		FF0BB63E217A84E800B0556C /* mParticle_ExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0BB63D217A84E800B0556C /* mParticle_ExampleTests.m */; };
-		FF0BB640217A84E800B0556C /* mParticle_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBB01A5B1DC1478A00A7B188 /* mParticle_Example.framework */; };
+		FF0BB63E217A84E800B0556C /* mParticle_OneTrustTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF0BB63D217A84E800B0556C /* mParticle_OneTrustTests.m */; };
+		FF0BB640217A84E800B0556C /* mParticle_OneTrust.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBB01A5B1DC1478A00A7B188 /* mParticle_OneTrust.framework */; };
 		FF13226221878D9C002AA653 /* mParticle_Apple_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBB01A6A1DC1491D00A7B188 /* mParticle_Apple_SDK.framework */; };
 /* End PBXBuildFile section */
 
@@ -22,19 +22,19 @@
 			containerPortal = DBB01A521DC1478A00A7B188 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = DBB01A5A1DC1478A00A7B188;
-			remoteInfo = "mParticle-Example";
+			remoteInfo = "mParticle-OneTrust";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DBB01A5B1DC1478A00A7B188 /* mParticle_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = mParticle_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DBB01A5E1DC1478A00A7B188 /* mParticle_Example.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mParticle_Example.h; sourceTree = "<group>"; };
+		DBB01A5B1DC1478A00A7B188 /* mParticle_OneTrust.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = mParticle_OneTrust.framework; path = mParticle_OneTrust.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBB01A5E1DC1478A00A7B188 /* mParticle_OneTrust.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mParticle_OneTrust.h; sourceTree = "<group>"; };
 		DBB01A5F1DC1478A00A7B188 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBB01A661DC1480700A7B188 /* MPKitOneTrust.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPKitOneTrust.h; sourceTree = "<group>"; };
 		DBB01A671DC1480700A7B188 /* MPKitOneTrust.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPKitOneTrust.m; sourceTree = "<group>"; };
 		DBB01A6A1DC1491D00A7B188 /* mParticle_Apple_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = mParticle_Apple_SDK.framework; path = Carthage/Build/iOS/mParticle_Apple_SDK.framework; sourceTree = "<group>"; };
-		FF0BB63B217A84E800B0556C /* mParticle_ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mParticle_ExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FF0BB63D217A84E800B0556C /* mParticle_ExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mParticle_ExampleTests.m; sourceTree = "<group>"; };
+		FF0BB63B217A84E800B0556C /* mParticle_OneTrustTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mParticle_OneTrustTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF0BB63D217A84E800B0556C /* mParticle_OneTrustTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mParticle_OneTrustTests.m; sourceTree = "<group>"; };
 		FF0BB63F217A84E800B0556C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -51,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF0BB640217A84E800B0556C /* mParticle_Example.framework in Frameworks */,
+				FF0BB640217A84E800B0556C /* mParticle_OneTrust.framework in Frameworks */,
 				FF13226221878D9C002AA653 /* mParticle_Apple_SDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -64,7 +64,7 @@
 			children = (
 				DBB01A6A1DC1491D00A7B188 /* mParticle_Apple_SDK.framework */,
 				DBB01A5D1DC1478A00A7B188 /* mParticle-OneTrust */,
-				FF0BB63C217A84E800B0556C /* mParticle_ExampleTests */,
+				FF0BB63C217A84E800B0556C /* mParticle_OneTrustTests */,
 				DBB01A5C1DC1478A00A7B188 /* Products */,
 				FF13226121878D9C002AA653 /* Frameworks */,
 			);
@@ -73,8 +73,8 @@
 		DBB01A5C1DC1478A00A7B188 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DBB01A5B1DC1478A00A7B188 /* mParticle_Example.framework */,
-				FF0BB63B217A84E800B0556C /* mParticle_ExampleTests.xctest */,
+				DBB01A5B1DC1478A00A7B188 /* mParticle_OneTrust.framework */,
+				FF0BB63B217A84E800B0556C /* mParticle_OneTrustTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -84,19 +84,19 @@
 			children = (
 				DBB01A661DC1480700A7B188 /* MPKitOneTrust.h */,
 				DBB01A671DC1480700A7B188 /* MPKitOneTrust.m */,
-				DBB01A5E1DC1478A00A7B188 /* mParticle_Example.h */,
+				DBB01A5E1DC1478A00A7B188 /* mParticle_OneTrust.h */,
 				DBB01A5F1DC1478A00A7B188 /* Info.plist */,
 			);
 			path = "mParticle-OneTrust";
 			sourceTree = "<group>";
 		};
-		FF0BB63C217A84E800B0556C /* mParticle_ExampleTests */ = {
+		FF0BB63C217A84E800B0556C /* mParticle_OneTrustTests */ = {
 			isa = PBXGroup;
 			children = (
-				FF0BB63D217A84E800B0556C /* mParticle_ExampleTests.m */,
+				FF0BB63D217A84E800B0556C /* mParticle_OneTrustTests.m */,
 				FF0BB63F217A84E800B0556C /* Info.plist */,
 			);
-			path = mParticle_ExampleTests;
+			path = mParticle_OneTrustTests;
 			sourceTree = "<group>";
 		};
 		FF13226121878D9C002AA653 /* Frameworks */ = {
@@ -113,7 +113,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBB01A601DC1478A00A7B188 /* mParticle_Example.h in Headers */,
+				DBB01A601DC1478A00A7B188 /* mParticle_OneTrust.h in Headers */,
 				DBB01A681DC1480700A7B188 /* MPKitOneTrust.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,9 +121,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		DBB01A5A1DC1478A00A7B188 /* mParticle-Example */ = {
+		DBB01A5A1DC1478A00A7B188 /* mParticle-OneTrust */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DBB01A631DC1478A00A7B188 /* Build configuration list for PBXNativeTarget "mParticle-Example" */;
+			buildConfigurationList = DBB01A631DC1478A00A7B188 /* Build configuration list for PBXNativeTarget "mParticle-OneTrust" */;
 			buildPhases = (
 				DBB01A561DC1478A00A7B188 /* Sources */,
 				DBB01A571DC1478A00A7B188 /* Frameworks */,
@@ -134,14 +134,14 @@
 			);
 			dependencies = (
 			);
-			name = "mParticle-Example";
-			productName = "mParticle-Example";
-			productReference = DBB01A5B1DC1478A00A7B188 /* mParticle_Example.framework */;
+			name = "mParticle-OneTrust";
+			productName = "mParticle-OneTrust";
+			productReference = DBB01A5B1DC1478A00A7B188 /* mParticle_OneTrust.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		FF0BB63A217A84E800B0556C /* mParticle_ExampleTests */ = {
+		FF0BB63A217A84E800B0556C /* mParticle_OneTrustTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FF0BB645217A84E800B0556C /* Build configuration list for PBXNativeTarget "mParticle_ExampleTests" */;
+			buildConfigurationList = FF0BB645217A84E800B0556C /* Build configuration list for PBXNativeTarget "mParticle_OneTrustTests" */;
 			buildPhases = (
 				FF0BB637217A84E800B0556C /* Sources */,
 				FF0BB638217A84E800B0556C /* Frameworks */,
@@ -152,9 +152,9 @@
 			dependencies = (
 				FF0BB642217A84E800B0556C /* PBXTargetDependency */,
 			);
-			name = mParticle_ExampleTests;
-			productName = mParticle_ExampleTests;
-			productReference = FF0BB63B217A84E800B0556C /* mParticle_ExampleTests.xctest */;
+			name = mParticle_OneTrustTests;
+			productName = mParticle_OneTrustTests;
+			productReference = FF0BB63B217A84E800B0556C /* mParticle_OneTrustTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -176,7 +176,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DBB01A551DC1478A00A7B188 /* Build configuration list for PBXProject "mParticle-Example" */;
+			buildConfigurationList = DBB01A551DC1478A00A7B188 /* Build configuration list for PBXProject "mParticle-OneTrust" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -188,8 +188,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DBB01A5A1DC1478A00A7B188 /* mParticle-Example */,
-				FF0BB63A217A84E800B0556C /* mParticle_ExampleTests */,
+				DBB01A5A1DC1478A00A7B188 /* mParticle-OneTrust */,
+				FF0BB63A217A84E800B0556C /* mParticle_OneTrustTests */,
 			);
 		};
 /* End PBXProject section */
@@ -224,7 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF0BB63E217A84E800B0556C /* mParticle_ExampleTests.m in Sources */,
+				FF0BB63E217A84E800B0556C /* mParticle_OneTrustTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,7 +233,7 @@
 /* Begin PBXTargetDependency section */
 		FF0BB642217A84E800B0556C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DBB01A5A1DC1478A00A7B188 /* mParticle-Example */;
+			target = DBB01A5A1DC1478A00A7B188 /* mParticle-OneTrust */;
 			targetProxy = FF0BB641217A84E800B0556C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -347,11 +347,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "mParticle-Example/Info.plist";
+				INFOPLIST_FILE = "mParticle-OneTrust/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mparticle.mParticle-Example";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mparticle.mParticle-OneTrust";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 			};
@@ -369,11 +369,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "mParticle-Example/Info.plist";
+				INFOPLIST_FILE = "mParticle-OneTrust/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mparticle.mParticle-Example";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mparticle.mParticle-OneTrust";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 			};
@@ -402,12 +402,12 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = mParticle_ExampleTests/Info.plist;
+				INFOPLIST_FILE = mParticle_OneTrustTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(PROJECT_DIR)/Carthage/Build/iOS";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mparticle.mParticle-ExampleTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mparticle.mParticle-OneTrustTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -436,11 +436,11 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = mParticle_ExampleTests/Info.plist;
+				INFOPLIST_FILE = mParticle_OneTrustTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(PROJECT_DIR)/Carthage/Build/iOS";
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mparticle.mParticle-ExampleTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mparticle.mParticle-OneTrustTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -449,7 +449,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DBB01A551DC1478A00A7B188 /* Build configuration list for PBXProject "mParticle-Example" */ = {
+		DBB01A551DC1478A00A7B188 /* Build configuration list for PBXProject "mParticle-OneTrust" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DBB01A611DC1478A00A7B188 /* Debug */,
@@ -458,7 +458,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DBB01A631DC1478A00A7B188 /* Build configuration list for PBXNativeTarget "mParticle-Example" */ = {
+		DBB01A631DC1478A00A7B188 /* Build configuration list for PBXNativeTarget "mParticle-OneTrust" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DBB01A641DC1478A00A7B188 /* Debug */,
@@ -467,7 +467,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FF0BB645217A84E800B0556C /* Build configuration list for PBXNativeTarget "mParticle_ExampleTests" */ = {
+		FF0BB645217A84E800B0556C /* Build configuration list for PBXNativeTarget "mParticle_OneTrustTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FF0BB643217A84E800B0556C /* Debug */,
