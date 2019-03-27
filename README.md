@@ -24,7 +24,7 @@ This repository contains the [OneTrust](https://www.zentrust.com/) integration f
 
 ### Documentation
 
-[Example integration](https://docs.mparticle.com/integrations/REPLACEME/event/)
+[OneTrust integration](https://docs.mparticle.com/integrations/onetrust/event/)
 
 ### License
 
