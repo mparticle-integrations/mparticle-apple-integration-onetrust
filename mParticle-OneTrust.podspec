@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = "mParticle-OneTrust"
-    s.version          = "8.0.0"
+    s.version          = "8.0.1"
     s.summary          = "OneTrust integration for mParticle"
 
     s.description      = <<-DESC
@@ -16,6 +16,6 @@ Pod::Spec.new do |s|
     
     s.ios.deployment_target = "9.0"
     s.ios.source_files      = 'mParticle-OneTrust/*.{h,m}'
-    s.ios.dependency 'mParticle-Apple-SDK/mParticle', '~> 8.0-beta'
+    s.ios.dependency 'mParticle-Apple-SDK/mParticle', '~> 8.0'
 
 end
