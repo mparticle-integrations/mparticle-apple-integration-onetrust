@@ -77,7 +77,6 @@
 -(void)actionConsent:(NSNotification*)notification {
     NSString *category = notification.name; // Cookie Name
     NSNumber *status = notification.object; // BOOL-ish value for consent
-    category = notification.name;
 
     // Fire consent change event
     [self createConsentEvent:category :status];
@@ -102,13 +101,9 @@
                 for (NSDictionary *element in jsonObject) {
                     consentMapping[element[@"value"]] = element[@"map"];
                 }
+            } else {
+                NSLog(@"Warning: One Trust Integration initialized with invalid Consent Mapping.\n jsonDictionary - %@", jsonObject);
             }
-            // TODO: Should we throw an error if the consent mapping
-            //       is not an array?
-            // else {
-            //     NSDictionary *jsonDictionary = (NSDictionary *)jsonObject;
-            //     NSLog(@"jsonDictionary - %@",jsonDictionary);
-            // }
         }
     return consentMapping;
 }
@@ -116,7 +111,6 @@
 // Creates an mParticle Consent Event
 -(void)createConsentEvent:(NSString*)cookieName
                          :(NSNumber*)status {
-    // TODO: Can we move this out of the function?
     MParticleUser *user = [MParticle sharedInstance].identity.currentUser;
 
     MPConsentState *consentState = [[MPConsentState alloc] init];
