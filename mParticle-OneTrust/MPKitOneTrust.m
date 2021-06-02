@@ -99,7 +99,11 @@
             if ([jsonObject isKindOfClass:[NSArray class]])
             {
                 for (NSDictionary *element in jsonObject) {
-                    consentMapping[element[@"value"]] = element[@"map"];
+                    if (element[@"value"] != nil && element[@"map"] != nil) {
+                        consentMapping[element[@"value"]] = element[@"map"];
+                    } else {
+                        NSLog(@"Warning: Invalid consent mapping - %@", element);
+                    }
                 }
             } else {
                 NSLog(@"Warning: One Trust Integration initialized with invalid Consent Mapping.\n jsonDictionary - %@", jsonObject);
