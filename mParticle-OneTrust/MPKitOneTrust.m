@@ -1,4 +1,5 @@
 #import "MPKitOneTrust.h"
+#import <OTPublishersHeadlessSDK/OTPublishersHeadlessSDK-Swift.h>
 
 @implementation MPKitOneTrust
 
@@ -45,6 +46,23 @@
         
         self->_started = YES;
         
+        // READ consent data mapping
+        NSString *mpConsentMapping = [[NSUserDefaults standardUserDefaults] stringForKey:@"OT_mP_Mapping"];
+
+        self->_consentMapping = [self parseConsentMapping:mpConsentMapping];
+
+
+        for(NSString *consentKey in [self.consentMapping allKeys]) {
+            // Add consent change observer for all known OneTrust Events
+            [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(actionConsent:) name:consentKey object:NULL];
+
+            // Fetch consent keys from one trust and pre-populate
+            NSNumber *status = [[NSNumber alloc] initWithUnsignedChar:[OTPublishersHeadlessSDK.shared getConsentStatusForCategory:consentKey]];
+
+            // Generate consents states for known events
+            [self createConsentEvent:consentKey :status];
+        }
+
         dispatch_async(dispatch_get_main_queue(), ^{
             NSDictionary *userInfo = @{mParticleKitInstanceKey:[[self class] kitCode]};
             
@@ -53,6 +71,62 @@
                                                               userInfo:userInfo];
         });
     });
+}
+
+// Listener for Consent Change dispatched by One Trust
+-(void)actionConsent:(NSNotification*)notification {
+    NSString *category = notification.name; // Cookie Name
+    NSNumber *status = notification.object; // BOOL-ish value for consent
+
+    // Fire consent change event
+    [self createConsentEvent:category :status];
+}
+
+// Parses the raw consent mapping from the mParticle UI into simple map
+- (NSDictionary*)parseConsentMapping:(NSString*)rawConsentMapping {
+    NSData *jsonData = [rawConsentMapping dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *error;
+
+    NSMutableDictionary *consentMapping = [[NSMutableDictionary alloc] init];
+
+    id jsonObject = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
+
+        if (error) {
+            NSLog(@"Error parsing JSON: %@", error);
+        }
+        else
+        {
+            if ([jsonObject isKindOfClass:[NSArray class]])
+            {
+                for (NSDictionary *element in jsonObject) {
+                    if (element[@"value"] != nil && element[@"map"] != nil) {
+                        consentMapping[element[@"value"]] = element[@"map"];
+                    } else {
+                        NSLog(@"Warning: Invalid consent mapping - %@", element);
+                    }
+                }
+            } else {
+                NSLog(@"Warning: One Trust Integration initialized with invalid Consent Mapping.\n jsonDictionary - %@", jsonObject);
+            }
+        }
+    return consentMapping;
+}
+
+// Creates an mParticle Consent Event
+-(void)createConsentEvent:(NSString*)cookieName
+                         :(NSNumber*)status {
+    MParticleUser *user = [MParticle sharedInstance].identity.currentUser;
+
+    MPConsentState *consentState = [[MPConsentState alloc] init];
+    MPGDPRConsent *gdprConsent = [[MPGDPRConsent alloc] init];
+
+    NSString *purpose = self->_consentMapping[cookieName];
+
+    gdprConsent.consented = status.intValue == 1;
+    gdprConsent.timestamp = [[NSDate alloc] init];
+
+    [consentState addGDPRConsentState:gdprConsent purpose:purpose];
+    user.consentState = consentState;
 }
 
 - (id const)providerKitInstance {

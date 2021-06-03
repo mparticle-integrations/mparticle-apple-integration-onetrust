@@ -10,5 +10,6 @@
 @property (nonatomic, strong, nonnull) NSDictionary *configuration;
 @property (nonatomic, strong, nullable) NSDictionary *launchOptions;
 @property (nonatomic, unsafe_unretained, readonly) BOOL started;
+@property (nonatomic, strong, nullable) NSDictionary *consentMapping;
 
 @end
