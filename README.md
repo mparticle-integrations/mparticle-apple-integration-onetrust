@@ -1,30 +1,34 @@
 ## OneTrust Kit Integration
 
-This repository contains the [OneTrust](https://www.zentrust.com/) integration for the [mParticle Apple SDK](https://github.com/mParticle/mparticle-apple-sdk).
+This repository contains the [OneTrust](https://www.onetrust.com/) integration for the [mParticle Apple SDK](https://github.com/mParticle/mparticle-apple-sdk).
 
 ### Adding the integration
 
-1. Add the kit dependency to your app's Podfile or Cartfile:
+1. Add the kit dependencies to your app's Podfile:
 
-    ```
-    pod 'mParticle-OneTrust', '~> 7.0'
-    ```
+   ```
+   # Specify exact version used in app.onetrust.com
+   pod 'OneTrust-CMP-XCFramework', 'X.XX.X'
 
-    OR
+   pod 'mParticle-Apple-SDK', '~>8.4.0'
+   pod 'mParticle-OneTrust', '~>8.0.2
+   ```
 
-    ```
-    github "mparticle-integrations/mparticle-apple-integration-onetrust" ~> 7.0
-    ```
+   _Note: OneTrust does not support SPM or Carthage at this moment_
 
-2. Follow the mParticle iOS SDK [quick-start](https://github.com/mParticle/mparticle-apple-sdk), then rebuild and launch your app, and verify that you see `"Included kits: { OneTrust }"` in your Xcode console 
+2. Verify that you are using the correct version of your OneTrust SDK as specified in _Cookie Complience > Integrations > SDKs_ on app.onetrust.com.
 
-> (This requires your mParticle log level to be at least Debug)
+3. Follow the mParticle iOS SDK [quick-start](https://github.com/mParticle/mparticle-apple-sdk), then rebuild and launch your app, and verify that you see `"Included kits: { OneTrust }"` in your Xcode console
+
+- (This requires your mParticle log level to be at least Debug)
 
 3. Reference mParticle's integration docs below to enable the integration.
 
 ### Documentation
 
-[OneTrust integration](https://docs.mparticle.com/integrations/onetrust/event/)
+[mParticle Docs: OneTrust integration](https://docs.mparticle.com/integrations/onetrust/event/)
+
+[OneTrust Developer SDK Portal: Getting Started with Native SDK (iOS)](https://developer.onetrust.com/sdk/mobile-apps/ios/getting-started)
 
 ### License
 
