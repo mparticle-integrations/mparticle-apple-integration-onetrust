@@ -100,7 +100,14 @@
             {
                 for (NSDictionary *element in jsonObject) {
                     if (element[@"value"] != nil && element[@"map"] != nil) {
-                        consentMapping[element[@"value"]] = element[@"map"];
+                        NSString *purpose = element[@"map"];
+                        NSString *regulation = @"gdpr";
+
+                        if ([purpose isEqualToString: @"data_sale_opt_out"]) {
+                            regulation = @"ccpa";
+                        }
+
+                        consentMapping[element[@"value"]] = @{ @"purpose": purpose, @"regulation": regulation};
                     } else {
                         NSLog(@"Warning: Invalid consent mapping - %@", element);
                     }
@@ -118,15 +125,30 @@
     MParticleUser *user = [MParticle sharedInstance].identity.currentUser;
 
     MPConsentState *consentState = [[MPConsentState alloc] init];
-    MPGDPRConsent *gdprConsent = [[MPGDPRConsent alloc] init];
 
-    NSString *purpose = self->_consentMapping[cookieName];
+    NSString *purpose = self->_consentMapping[cookieName][@"purpose"];
+    NSString *regulation = self->_consentMapping[cookieName][@"regulation"];
+    BOOL consentBoolean = status.intValue == 1;
 
-    gdprConsent.consented = status.intValue == 1;
-    gdprConsent.timestamp = [[NSDate alloc] init];
+    if ([regulation isEqualToString:@"gdpr"]) {
+        MPGDPRConsent *gdprConsent = [[MPGDPRConsent alloc] init];
 
-    [consentState addGDPRConsentState:gdprConsent purpose:purpose];
-    user.consentState = consentState;
+        gdprConsent.consented = consentBoolean;
+        gdprConsent.timestamp = [[NSDate alloc] init];
+
+        [consentState addGDPRConsentState:gdprConsent purpose:purpose];
+    } else if([regulation isEqualToString:@"ccpa"]) {
+        MPCCPAConsent *ccpaConsent = [[MPCCPAConsent alloc] init];
+
+        ccpaConsent.consented = consentBoolean;
+        ccpaConsent.timestamp = [[NSDate alloc] init];
+
+        [consentState setCCPAConsentState: ccpaConsent];
+    } else {
+        NSLog(@"Unknown Consent Regulation");
+    }
+
+    [user setConsentState: consentState];
 }
 
 - (id const)providerKitInstance {
