@@ -44,13 +44,17 @@
         NSString* purposeMappingDict = [self->_configuration valueForKey:@"mobileConsentGroups"];
         [[NSUserDefaults standardUserDefaults] setObject:purposeMappingDict forKey:@"OT_mP_Mapping"];
         
+        NSString* vendorPurposeMappingDict = [self->_configuration valueForKey:@"vendorConsentGroups"];
+        [[NSUserDefaults standardUserDefaults] setObject:vendorPurposeMappingDict forKey:@"OT_Vendor_mP_Mapping"];
+        
         self->_started = YES;
         
         // READ consent data mapping
         NSString *mpConsentMapping = [[NSUserDefaults standardUserDefaults] stringForKey:@"OT_mP_Mapping"];
+        NSString *mpVendorConsentMapping = [[NSUserDefaults standardUserDefaults] stringForKey:@"OT_Vendor_mP_Mapping"];
 
         self->_consentMapping = [self parseConsentMapping:mpConsentMapping];
-
+        self->_venderConsentMapping = [self parseConsentMapping:mpVendorConsentMapping];
 
         for(NSString *consentKey in [self.consentMapping allKeys]) {
             // Add consent change observer for all known OneTrust Events
@@ -58,6 +62,17 @@
 
             // Fetch consent keys from one trust and pre-populate
             NSNumber *status = [[NSNumber alloc] initWithUnsignedChar:[OTPublishersHeadlessSDK.shared getConsentStatusForCategory:consentKey]];
+
+            // Generate consents states for known events
+            [self createConsentEvent:consentKey :status];
+        }
+        
+        for(NSString *consentKey in [self.venderConsentMapping allKeys]) {
+            // Add consent change observer for all known OneTrust Vendor Events
+            [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(actionConsent:) name:consentKey object:NULL];
+
+            // Fetch consent keys from one trust and pre-populate
+            NSNumber *status = [[NSNumber alloc] initWithUnsignedChar:[OTPublishersHeadlessSDK.shared getConsentStatusForSDKId:consentKey]];
 
             // Generate consents states for known events
             [self createConsentEvent:consentKey :status];
@@ -84,10 +99,14 @@
 
 // Parses the raw consent mapping from the mParticle UI into simple map
 - (NSDictionary*)parseConsentMapping:(NSString*)rawConsentMapping {
+    NSMutableDictionary *consentMapping = [[NSMutableDictionary alloc] init];
+
+    if (rawConsentMapping.length == 0 || rawConsentMapping == nil) {
+        return consentMapping;
+    }
+    
     NSData *jsonData = [rawConsentMapping dataUsingEncoding:NSUTF8StringEncoding];
     NSError *error;
-
-    NSMutableDictionary *consentMapping = [[NSMutableDictionary alloc] init];
 
     id jsonObject = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
 
