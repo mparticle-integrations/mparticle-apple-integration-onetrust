@@ -58,7 +58,7 @@
 
         for(NSString *consentKey in [self.consentMapping allKeys]) {
             // Add consent change observer for all known OneTrust Events
-            [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(actionConsent:) name:consentKey object:NULL];
+            [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(actionConsent:) name:consentKey object:nil];
 
             // Fetch consent keys from one trust and pre-populate
             NSNumber *status = [[NSNumber alloc] initWithUnsignedChar:[OTPublishersHeadlessSDK.shared getConsentStatusForCategory:consentKey]];
@@ -69,7 +69,7 @@
         
         for(NSString *consentKey in [self.venderConsentMapping allKeys]) {
             // Add consent change observer for all known OneTrust Vendor Events
-            [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(actionConsent:) name:consentKey object:NULL];
+            [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(actionConsent:) name:consentKey object:nil];
 
             // Fetch consent keys from one trust and pre-populate
             NSNumber *status = [[NSNumber alloc] initWithUnsignedChar:[OTPublishersHeadlessSDK.shared getConsentStatusForSDKId:consentKey]];
