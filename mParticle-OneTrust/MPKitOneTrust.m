@@ -66,20 +66,10 @@
         self->_venderGoogleConsentMapping = [self parseConsentMapping:mpVendorGoogleConsentMapping];
         self->_venderGeneralConsentMapping = [self parseConsentMapping:mpVendorGeneralConsentMapping];
 
-        for(NSString *consentKey in [self.purposeConsentMapping allKeys]) {
-            // Add consent change observer for all known OneTrust Events
-            [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(actionConsent:) name:consentKey object:nil];
-
-            // Fetch consent keys from one trust and pre-populate
-            NSNumber *status = [[NSNumber alloc] initWithUnsignedChar:[OTPublishersHeadlessSDK.shared getConsentStatusForCategory:consentKey]];
-
-            // Generate consents states for known events
-            [self createConsentEvent:consentKey :self.purposeConsentMapping :status];
-        }
+        [self updateAllConsentStates];
         
-        [self updateVendorConsents:self.venderIABConsentMapping :VendorListModeIab];
-        [self updateVendorConsents:self.venderGoogleConsentMapping :VendorListModeGoogle];
-        [self updateVendorConsents:self.venderGeneralConsentMapping :VendorListModeGeneral];
+        //registering the observer
+        [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(actionConsent:) name:@"OTConsentUpdated" object:nil];
 
         dispatch_async(dispatch_get_main_queue(), ^{
             NSDictionary *userInfo = @{mParticleKitInstanceKey:[[self class] kitCode]};
@@ -93,11 +83,7 @@
 
 // Listener for Consent Change dispatched by One Trust
 -(void)actionConsent:(NSNotification*)notification {
-    NSString *category = notification.name; // Cookie Name
-    NSNumber *status = notification.object; // BOOL-ish value for consent
-
-    // Fire consent change event
-    [self createConsentEvent:category :self.purposeConsentMapping :status];
+    [self updateAllConsentStates];
 }
 
 // Parses the raw consent mapping from the mParticle UI into simple map
@@ -172,6 +158,20 @@
     }
 
     [user setConsentState: consentState];
+}
+
+-(void)updateAllConsentStates {
+    for(NSString *consentKey in [self.purposeConsentMapping allKeys]) {
+        // Fetch consent keys from one trust and pre-populate
+        NSNumber *status = [[NSNumber alloc] initWithUnsignedChar:[OTPublishersHeadlessSDK.shared getConsentStatusForCategory:consentKey]];
+
+        // Generate consents states for known events
+        [self createConsentEvent:consentKey :self.purposeConsentMapping :status];
+    }
+    
+    [self updateVendorConsents:self.venderIABConsentMapping :VendorListModeIab];
+    [self updateVendorConsents:self.venderGoogleConsentMapping :VendorListModeGoogle];
+    [self updateVendorConsents:self.venderGeneralConsentMapping :VendorListModeGeneral];
 }
 
 -(void)updateVendorConsents:(NSDictionary*)consentMapping
