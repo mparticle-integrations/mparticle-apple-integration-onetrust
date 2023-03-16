@@ -133,7 +133,7 @@
                          :(NSNumber*)status {
     MParticleUser *user = [MParticle sharedInstance].identity.currentUser;
 
-    MPConsentState *consentState = [[MPConsentState alloc] init];
+    MPConsentState *consentState = user.consentState;
 
     NSString *purpose = consentMapping[cookieName][@"purpose"];
     NSString *regulation = consentMapping[cookieName][@"regulation"];
