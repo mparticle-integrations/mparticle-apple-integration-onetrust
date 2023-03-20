@@ -17,6 +17,6 @@ Pod::Spec.new do |s|
     s.ios.deployment_target = "11.0"
     s.ios.source_files      = 'mParticle-OneTrust/*.{h,m}'
     s.ios.dependency 'mParticle-Apple-SDK/mParticle', '~> 8.0'
-    s.ios.dependency 'OneTrust-CMP-XCFramework', '~> 6.17'
+    s.ios.dependency 'OneTrust-CMP-XCFramework', '~> 202302.1.0'
 
 end
