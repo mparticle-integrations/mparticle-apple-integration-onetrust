@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = "mParticle-OneTrust"
-    s.version          = "8.0.4"
+    s.version          = "8.0.5"
     s.summary          = "OneTrust integration for mParticle"
 
     s.description      = <<-DESC
@@ -17,6 +17,7 @@ Pod::Spec.new do |s|
     s.ios.deployment_target = "11.0"
     s.ios.source_files      = 'mParticle-OneTrust/*.{h,m}'
     s.ios.dependency 'mParticle-Apple-SDK/mParticle', '~> 8.0'
+    #OneTrust changed their version formating making automatic support up to the next major version no longer possible
     s.ios.dependency 'OneTrust-CMP-XCFramework', '~> 202302.1.0'
 
 end
