@@ -4,17 +4,19 @@ This repository contains the [OneTrust](https://www.onetrust.com/) integration f
 
 ### Adding the integration
 
-1. Add the kit dependencies to your app's Podfile:
+1. Add the kit dependencies to your app's Podfile or using SPM:
 
    ```
-   # Specify exact version used in app.onetrust.com
-   pod 'OneTrust-CMP-XCFramework', 'X.XX.X'
-
-   pod 'mParticle-Apple-SDK', '~>8.4.0'
-   pod 'mParticle-OneTrust', '~>8.0.2
+   pod 'mParticle-OneTrust', '~> 8.0' 
    ```
 
-   _Note: OneTrust does not support SPM or Carthage at this moment_
+   OR 
+
+   ```
+   Open your project and navigate to the project's settings. Select the tab named Swift Packages and click on the add button (+) at the bottom left. then, enter the URL of OneTrust Kit GitHub repository - https://github.com/mparticle-integrations/mparticle-apple-integration-onetrust and click Next.
+   ```
+
+   _Note: OneTrust does not support Carthage at this moment_
 
 2. Verify that you are using the correct version of your OneTrust SDK as specified in _Cookie Complience > Integrations > SDKs_ on app.onetrust.com.
 
