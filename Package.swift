@@ -16,7 +16,7 @@ let package = Package(
                .upToNextMajor(from: "8.0.0")),
       .package(name: "OTPublishersHeadlessSDK",
                url: "https://github.com/Zentrust/OTPublishersHeadlessSDK",
-               .upToNextMajor(from: "202303.1.0")),
+               .upToNextMajor(from: "202310.1.3")),
     ],
     targets: [
         .target(
