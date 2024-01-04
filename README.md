@@ -18,7 +18,9 @@ This repository contains the [OneTrust](https://www.onetrust.com/) integration f
 
    _Note: OneTrust does not support Carthage at this moment_
 
-2. Verify that you are using the correct version of your OneTrust SDK as specified in _Cookie Complience > Integrations > SDKs_ on app.onetrust.com.
+2. Add the OneTrust SDK following their [documentation](https://developer.onetrust.com/onetrust/docs/add-sdk-to-app-ios-tvos) and ensure you pin to the correct version of the OneTrust SDK as you specified in the OneTrust UI on app.onetrust.com.
+
+   _Note: OneTrust is unique in their versioning and in that you must specify your version used from a constrained list in their UI. This necessitates that we cannot pin the version of the OneTrust SDK in this kit. Therefore you must pin the correct version in the podspec or package.swift of your application_
 
 3. Follow the mParticle iOS SDK [quick-start](https://github.com/mParticle/mparticle-apple-sdk), then rebuild and launch your app, and verify that you see `"Included kits: { OneTrust }"` in your Xcode console
 
