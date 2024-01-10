@@ -14,14 +14,11 @@ let package = Package(
       .package(name: "mParticle-Apple-SDK",
                url: "https://github.com/mParticle/mparticle-apple-sdk",
                .upToNextMajor(from: "8.0.0")),
-      .package(name: "OTPublishersHeadlessSDK",
-               url: "https://github.com/Zentrust/OTPublishersHeadlessSDK",
-               .upToNextMajor(from: "202310.1.3")),
     ],
     targets: [
         .target(
             name: "mParticle-OneTrust",
-            dependencies: ["mParticle-Apple-SDK", "OTPublishersHeadlessSDK"],
+            dependencies: ["mParticle-Apple-SDK"],
             path: "mParticle-OneTrust",
             exclude: ["Info.plist"],
             publicHeadersPath: "."
