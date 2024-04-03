@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53D881F92BBCA0330066BB30 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 53D881F82BBCA0330066BB30 /* PrivacyInfo.xcprivacy */; };
 		DBB01A601DC1478A00A7B188 /* mParticle_OneTrust.h in Headers */ = {isa = PBXBuildFile; fileRef = DBB01A5E1DC1478A00A7B188 /* mParticle_OneTrust.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DBB01A681DC1480700A7B188 /* MPKitOneTrust.h in Headers */ = {isa = PBXBuildFile; fileRef = DBB01A661DC1480700A7B188 /* MPKitOneTrust.h */; };
 		DBB01A691DC1480700A7B188 /* MPKitOneTrust.m in Sources */ = {isa = PBXBuildFile; fileRef = DBB01A671DC1480700A7B188 /* MPKitOneTrust.m */; };
@@ -27,7 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DBB01A5B1DC1478A00A7B188 /* mParticle_OneTrust.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = mParticle_OneTrust.framework; path = mParticle_OneTrust.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		53D881F82BBCA0330066BB30 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		DBB01A5B1DC1478A00A7B188 /* mParticle_OneTrust.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = mParticle_OneTrust.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBB01A5E1DC1478A00A7B188 /* mParticle_OneTrust.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mParticle_OneTrust.h; sourceTree = "<group>"; };
 		DBB01A5F1DC1478A00A7B188 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBB01A661DC1480700A7B188 /* MPKitOneTrust.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPKitOneTrust.h; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				DBB01A661DC1480700A7B188 /* MPKitOneTrust.h */,
 				DBB01A671DC1480700A7B188 /* MPKitOneTrust.m */,
 				DBB01A5E1DC1478A00A7B188 /* mParticle_OneTrust.h */,
+				53D881F82BBCA0330066BB30 /* PrivacyInfo.xcprivacy */,
 				DBB01A5F1DC1478A00A7B188 /* Info.plist */,
 			);
 			path = "mParticle-OneTrust";
@@ -181,6 +184,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = DBB01A511DC1478A00A7B188;
@@ -199,6 +203,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53D881F92BBCA0330066BB30 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
