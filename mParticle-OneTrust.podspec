@@ -20,5 +20,12 @@ Pod::Spec.new do |s|
     s.ios.dependency 'mParticle-Apple-SDK/mParticle', '~> 8.22'
     #OneTrust's unique version formating makes automatic support up to the next major version no longer possible. Additionally, as a specific version is required in their UI for their SDK to function we do not include a specific version of the 'OneTrust-CMP-XCFramework' here and expect the version to be defined in the client app.
     s.ios.dependency 'OneTrust-CMP-XCFramework'
+    
+    s.tvos.deployment_target = "11.0"
+    s.tvos.source_files      = 'mParticle-OneTrust/*.{h,m}'
+    s.tvos.resource_bundles  = { 'mParticle-OneTrust-Privacy' => ['mParticle-OneTrust/PrivacyInfo.xcprivacy'] }
+    s.tvos.dependency 'mParticle-Apple-SDK/mParticle', '~> 8.22'
+    #OneTrust's unique version formating makes automatic support up to the next major version no longer possible. Additionally, as a specific version is required in their UI for their SDK to function we do not include a specific version of the 'OneTrust-CMP-XCFramework' here and expect the version to be defined in the client app.
+    s.tvos.dependency 'OneTrust-CMP-XCFramework'
 
 end
