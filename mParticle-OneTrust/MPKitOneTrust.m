@@ -1,5 +1,9 @@
 #import "MPKitOneTrust.h"
+#if TARGET_OS_IOS
 #import <OTPublishersHeadlessSDK/OTPublishersHeadlessSDK-Swift.h>
+#else
+#import <OTPublishersHeadlessSDKtvOS/OTPublishersHeadlessSDKtvOS-Swift.h>
+#endif
 
 @implementation MPKitOneTrust
 
