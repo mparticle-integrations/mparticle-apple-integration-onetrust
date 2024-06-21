@@ -4,7 +4,7 @@ import PackageDescription
 
 let package = Package(
     name: "mParticle-OneTrust",
-    platforms: [ .iOS(.v11) ],
+    platforms: [ .iOS(.v11), .tvOS(.v11) ],
     products: [
         .library(
             name: "mParticle-OneTrust",
