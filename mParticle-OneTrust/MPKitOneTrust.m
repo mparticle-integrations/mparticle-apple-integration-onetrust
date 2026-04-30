@@ -40,6 +40,10 @@
 }
 
 - (void)start {
+    if (!_configuration) {
+        return;
+    }
+
     static dispatch_once_t kitPredicate;
     
     dispatch_once(&kitPredicate, ^{
